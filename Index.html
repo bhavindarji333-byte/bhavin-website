@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhavin Darji & Associates</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f7f3ee;
+    color: #222;
+    position: relative;
+}
+
+/* WATERMARK LOGO */
+body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    background: url('logo.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.04;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* MAKE CONTENT ABOVE WATERMARK */
+.header, .hero, .services, #contact, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: white;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 115px;
+    width: auto;
+    margin-right: 15px;
+}
+
+.logo-text strong {
+    font-size: 40px;
+}
+
+.logo-text span {
+    font-size: 16px;
+    color: #666;
+}
+
+/* NAV */
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #444;
+}
+
+.nav a:hover {
+    color: #c89b3c;
+}
+
+.cta-btn {
+    background: #c89b3c;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 8%;
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.hero-text h1 {
+    font-size: 46px;
+}
+
+.hero-text h2 {
+    font-weight: 400;
+    color: #666;
+}
+
+.hero-text p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.tagline {
+    color: #c89b3c;
+    margin: 15px 0;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.primary {
+    background: #c89b3c;
+    color: white;
+}
+
+.secondary {
+    border: 1px solid #c89b3c;
+    color: #c89b3c;
+}
+
+/* IMAGE */
+.hero-img img {
+    width: 420px;
+    border-radius: 10px;
+}
+
+/* SERVICES */
+.services {
+    padding: 80px 8%;
+}
+
+.service-item {
+    background: white;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.service-desc {
+    display: none;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* TRUST SECTION */
+.trust {
+    text-align: center;
+    padding: 60px 8%;
+    background: white;
+}
+
+/* CONTACT */
+#contact {
+    padding: 60px 8%;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: white;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">
+        <img src="logo.png">
+        <div class="logo-text">
+            <strong>Bhavin Darji</strong><br>
+            <span>& Associates</span>
+        </div>
+    </div>
+
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="cta-btn">Get Consultation</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+
+    <div class="hero-text">
+        <h2>WELCOME TO</h2>
+        <h1>Bhavin Darji & Associates</h1>
+        <h2>Accounting & Taxation Consultancy</h2>
+
+        <p>
+            Professional accounting, taxation and financial consultancy services
+            tailored to meet your business and personal needs.
+        </p>
+
+        <div class="tagline">
+            Let us handle your numbers so you can focus on growing your business.
+        </div>
+
+        <a href="#" class="btn primary">Get Consultation</a>
+        <a href="Brochure_BDA.pdf" class="btn secondary">Download Brochure</a>
+    </div>
+
+    <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f">
+    </div>
+
+</div>
+
+<!-- SERVICES -->
+<div class="services" id="services">
+    <h2>Our Services</h2>
+
+    <div class="service-item" onclick="toggleService(this)">
+        <h3>Accounting & Bookkeeping</h3>
+        <p class="service-desc">Maintenance of books, MIS reporting, bank reconciliation.</p>
+    </div>
+
+    <div class="service-item" onclick="toggleService(this)">
+        <h3>GST, TDS & Income Tax</h3>
+        <p class="service-desc">GST returns, TDS compliance, income tax filing and advisory.</p>
+    </div>
+
+    <div class="service-item" onclick="toggleService(this)">
+        <h3>Tax Planning</h3>
+        <p class="service-desc">Strategic tax planning and savings solutions.</p>
+    </div>
+
+    <div class="service-item" onclick="toggleService(this)">
+        <h3>Business Setup</h3>
+        <p class="service-desc">Company incorporation and advisory services.</p>
+    </div>
+
+    <div class="service-item" onclick="toggleService(this)">
+        <h3>Financial Advisory</h3>
+        <p class="service-desc">CMA reports, budgeting and funding assistance.</p>
+    </div>
+
+</div>
+
+<!-- TRUST -->
+<div class="trust">
+    <h2>Why Choose Us</h2>
+    <p>✔ Experienced Professionals</p>
+    <p>✔ Timely & Accurate Work</p>
+    <p>✔ End-to-End Solutions</p>
+    <p>✔ Practical Business Advice</p>
+</div>
+
+<!-- CONTACT -->
+<div id="contact">
+    <h2>Contact Us</h2>
+
+    <p>📞 9372842946</p>
+    <p>📧 bhavindarjiassociates@gmail.com</p>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919372842946" 
+style="position:fixed; bottom:20px; right:20px; background:#25D366; 
+color:white; padding:15px; border-radius:50%; text-decoration:none;">
+💬
+</a>
+
+<footer>
+    © 2026 Bhavin Darji & Associates
+</footer>
+
+<script>
+function toggleService(el){
+    let desc = el.querySelector(".service-desc");
+    desc.style.display = desc.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
